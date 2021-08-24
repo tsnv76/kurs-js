@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+    'use strict';
+
+function sum_numbers(x, y){
+   return x + y
+}
+
+function diff_numbers(x, y){
+   return x - y
+}
+
+function mul_numbers(x, y){
+   return x * y
+}
+
+function div_numbers(x, y){
+   return x / y
+}
+
+let $a = +prompt('Введите первое число ->','');
+let $b = +prompt('Введите второе число ->','');
+let $s = prompt('Введите математическую операцию ->','');
+
+switch($s){
+ case '+':
+  document.write('Сложение <br \/>');
+  document.write(sum_numbers($a, $b));
+  break;
+ case '-':
+  document.write('Вычитание <br \/>');
+  document.write(diff_numbers($a, $b));
+  break;
+ case '/':
+  document.write('Деление <br \/>');
+  if ($b != 0) {
+   document.write(div_numbers($a, $b));
+  }
+  else {
+   document.write('На ноль! Недопустимое значение b!');
+  }
+   break;
+ case '*':
+  document.write('Умножение <br \/>');
+  document.write(mul_numbers($a, $b));
+  break;
+}
+
+</script>
+
+
+</body>
+
+</html>

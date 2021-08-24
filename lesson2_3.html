@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+let $a = prompt('Введите первое число ->','');
+let $b = prompt('Введите второе число ->','');
+if ($a >= 0 && $b >= 0) {
+  var  $c = $a - $b;
+  document.write('Разность чисел a и b = ' + $c);
+}
+else if  ($a < 0 && $b < 0) {
+  var $c = $a * $b;
+  document.write('Произведение чисел a и b = ' + $c);
+}
+else {
+  var $c = Number($a) + Number($b);
+  document.write('Сумма чисел a и b = ' + $c)
+}
+
+</script>
+
+
+</body>
+
+</html>
