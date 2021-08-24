@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+    'use strict';
+
+function sum_numbers(x, y){
+   return x + y
+}
+
+function diff_numbers(x, y){
+   return x - y
+}
+
+function mul_numbers(x, y){
+   return x * y
+}
+
+function div_numbers(x, y){
+   return x / y
+}
+
+let $a = +prompt('Введите первое число ->','');
+let $b = +prompt('Введите второе число ->','');
+
+document.write('Числа ' + $a + ' и ' + $b  + '<br \/>');
+document.write('Сумма чисел ' + sum_numbers($a, $b) + '<br \/>');
+document.write('Разность чисел ' + diff_numbers($a, $b) + '<br \/>');
+document.write('Произведение чисел ' + mul_numbers($a, $b) + '<br \/>');
+if ($b != 0) {
+document.write('Деление чисел ' + div_numbers($a, $b));
+}
+else {
+document.write('Деление на 0!');
+}
+
+</script>
+
+
+</body>
+
+</html>
