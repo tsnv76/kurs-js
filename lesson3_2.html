@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+    'use strict';
+
+function getPrice(min, max){
+   var number = parseInt(Math.random()*(max - min) + min);
+   if (number === -0) number = 0;
+   return number;
+}
+
+var basket = [
+    {
+      product: "Процессор",
+      price: getPrice(1000, 10000)
+    },
+    {
+      product: "Материнская плата",
+      price: getPrice(3000, 10000)
+    },
+    {
+      product: "Память",
+      price: getPrice(1000, 2000)
+    },
+    {
+      product: "Видеокарта",
+      price: getPrice(1000, 100000)
+    }
+];
+var basketPrice = 0;
+for (var prod of basket){
+   basketPrice += prod.price;
+   document.write("Товар " + prod.product + " стоит: " + prod.price + ' рублей. <br \/>');
+}
+
+document.write("Стоимость товаров в корзине: " + basketPrice + " руб"); 
+
+</script>
+
+
+</body>
+
+</html>
