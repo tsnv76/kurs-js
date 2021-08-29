@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+    'use strict';
+ 
+var nums = 0;
+var n = 100
+
+while (nums <= 100) {
+  var check = true;
+  for (let i = 2; i < nums; i++){
+    if (nums%i === 0) {
+        check = false;
+        break;
+    }
+  }
+  if (check) document.write(nums + ' ');
+  nums++;
+}
+
+</script>
+
+
+</body>
+
+</html>
