@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+var number;
+var object = {
+  hundreds : 0,
+  dozens : 0,
+  units : 0 
+};
+function splitNumber(number) {
+number = prompt('Введите любое число от 0 до 999 в трехзначном формате', '000');
+if (number > 999){
+ document.write('Число превышает 999 >=<br \/>');
+}
+
+else {
+object.hundreds = Math.floor(number / 100);
+object.dozens = Math.floor(number / 10) % 10;
+object.units = number % 10;
+document.write('Число ' + number + ' включает в себя: <br \/>');
+}
+for (var i in object){
+ document.write(i + ": " + object[i] + '<br \/>');
+}
+
+}
+
+
+splitNumber(number);
+
+</script>
+
+
+</body>
+
+</html>

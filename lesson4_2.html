@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+
+function Item(product, image, price, quantity, discount=0) {
+    this.product = product;
+    this.image = `../img/${image}.png`;
+    this.price = price;
+    this.quantity = quantity;
+    this.discount = discount;
+    this.finalPrice = function() {
+        if (this.discount != 0) {
+            return this.price - this.price*this.discount/100;
+        } else {
+            return this.price;
+        }
+    }
+    this.showMyChart = function() {
+        return `${this.product} (количество: ${this.quantity})`;
+    }
+}
+
+let shoppingCart = []
+
+shoppingCart.push(
+    new Item('Материнская плата', 'mb', 9500, 2, 5)
+);
+shoppingCart.push(
+    new Item('Процессор', 'proc', 35000, 5, 10)
+);
+shoppingCart.push(
+    new Item('Оперативная память', 'ozu', 1750, 6)
+);
+shoppingCart.push(
+    new Item('Видеокарта', 'video', 32000, 1)
+);
+shoppingCart.push(
+    new Item('Монитор', 'monitor', 22, 6500, 25)
+);
+
+
+function finalChart(shoppingCart) {
+    document.write('Ваш заказ: <br \/>')
+    shoppingCart.forEach(val => {
+    document.write (`<img src='${val.image}'>.
+    ${val.showMyChart()}.
+    Цена с учетом скидки: ${val.finalPrice()} .
+    Стоимость позиции: ${val.quantity * val.finalPrice()} <br \/> `);
+    });
+}
+finalChart(shoppingCart);
+
+
+function finalCost(shoppingCart) {
+    return shoppingCart.reduce( function (acc, shoppingCart){
+        return acc + (shoppingCart.finalPrice() * shoppingCart.quantity)
+    }, 0)
+};
+document.write('<br \/>Конечная стоимость заказа: ' + finalCost(shoppingCart)).toUpperCase();
+
+</script>
+
+
+</body>
+
+</html>
